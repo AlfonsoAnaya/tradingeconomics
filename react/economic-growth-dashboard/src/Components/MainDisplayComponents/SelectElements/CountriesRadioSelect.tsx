@@ -1,0 +1,52 @@
+import * as React from 'react';
+import { useState, useEffect } from 'react';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+
+interface CountriesRadioSelectProps {
+    setCountries: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+function CountriesRadioSelect({setCountries}: CountriesRadioSelectProps) {
+  
+  const [checkedCountries, setCheckedCountries] = useState<string[]>(['Mexico']);
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = event.target;
+
+    // Update checked countries based on checkbox state
+    if (checked) {
+      setCheckedCountries((prevChecked) => [...prevChecked, name]);
+    } else {
+      setCheckedCountries((prevChecked) => prevChecked.filter((country) => country !== name));
+    }
+  };
+
+  useEffect(() => {
+    setCountries(checkedCountries)
+  }, [checkedCountries]);
+
+  return (
+    <FormGroup>
+      <FormControlLabel
+        control={<Checkbox name="Mexico" checked={checkedCountries.includes('Mexico')} onChange={handleCheckboxChange} />}
+        label="Mexico"
+      />
+      <FormControlLabel
+        control={<Checkbox name="Thailand" checked={checkedCountries.includes('Thailand')} onChange={handleCheckboxChange} />}
+        label="Thailand"
+      />
+      <FormControlLabel
+        control={<Checkbox name="New Zealand" checked={checkedCountries.includes('New Zealand')} onChange={handleCheckboxChange} />}
+        label="New Zealand"
+      />
+      <FormControlLabel
+        control={<Checkbox name="Sweden" checked={checkedCountries.includes('Sweden')} onChange={handleCheckboxChange} />}
+        label="Sweden"
+      />
+    </FormGroup>
+  );
+}
+
+export default CountriesRadioSelect
