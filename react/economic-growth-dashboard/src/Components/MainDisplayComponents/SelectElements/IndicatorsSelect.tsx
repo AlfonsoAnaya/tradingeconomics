@@ -25,13 +25,21 @@ function IndicatorsSelect({setSearchIndicator}: IndicatorsSelectProps) {
   return (
     <Box sx={{ minWidth: 200 }}>
       <FormControl fullWidth>
-        <InputLabel id="indicator-select">Indicator</InputLabel>
+        <InputLabel 
+          id="indicator-select"
+          sx={{ color: 'rgb(16, 15, 15)', '&.Mui-focused': { color: 'rgb(102, 128, 11)' } }} // Custom label color
+        >
+          Indicator
+        </InputLabel>
         <Select
+          className="h-[45px]"
           labelId="indicator-select"
           id="indicator"
           value={indicator}
           label="Indicator"
           onChange={handleChange}
+          
+          
         >
           <MenuItem value={"GDP"}>GDP</MenuItem>
           <MenuItem value={"GDP Per Capita PPP"}>GDP Per Capita PPP</MenuItem>

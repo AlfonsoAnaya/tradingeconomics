@@ -30,19 +30,39 @@ function CountriesRadioSelect({setCountries}: CountriesRadioSelectProps) {
   return (
     <FormGroup className="[&>*]:h-[30px]">
       <FormControlLabel
-        control={<Checkbox name="Mexico" checked={checkedCountries.includes('Mexico')} onChange={handleCheckboxChange} />}
+        control={<Checkbox name="Mexico" checked={checkedCountries.includes('Mexico')} onChange={handleCheckboxChange} sx={{
+          color: "rgb(102, 128, 11)", // Unchecked color
+          '&.Mui-checked': {
+            color: 'rgb(102, 128, 11)', // Checked color
+          },
+        }}/>}
         label="Mexico"
       />
       <FormControlLabel
-        control={<Checkbox name="Thailand" checked={checkedCountries.includes('Thailand')} onChange={handleCheckboxChange} />}
+        control={<Checkbox name="Thailand" checked={checkedCountries.includes('Thailand')} onChange={handleCheckboxChange} sx={{
+          color: "rgb(102, 128, 11)", // Unchecked color
+          '&.Mui-checked': {
+            color: 'rgb(102, 128, 11)', // Checked color
+          },
+        }}/>}
         label="Thailand"
       />
       <FormControlLabel
-        control={<Checkbox name="New Zealand" checked={checkedCountries.includes('New Zealand')} onChange={handleCheckboxChange} />}
+        control={<Checkbox name="New Zealand" checked={checkedCountries.includes('New Zealand')} onChange={handleCheckboxChange} sx={{
+          color: "rgb(102, 128, 11)", // Unchecked color
+          '&.Mui-checked': {
+            color: 'rgb(102, 128, 11)', // Checked color
+          },
+        }}/>}
         label="New Zealand"
       />
       <FormControlLabel
-        control={<Checkbox name="Sweden" checked={checkedCountries.includes('Sweden')} onChange={handleCheckboxChange} />}
+        control={<Checkbox name="Sweden" checked={checkedCountries.includes('Sweden')} onChange={handleCheckboxChange} sx={{
+          color: "rgb(102, 128, 11)", // Unchecked color
+          '&.Mui-checked': {
+            color: 'rgb(102, 128, 11)', // Checked color
+          },
+        }}/>}
         label="Sweden"
       />
     </FormGroup>

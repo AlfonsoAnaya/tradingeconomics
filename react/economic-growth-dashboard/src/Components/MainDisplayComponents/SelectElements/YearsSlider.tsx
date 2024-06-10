@@ -73,6 +73,28 @@ function YearsSlider({setYear1, setYear2}: YearsSliderProps) {
         min={minYear} 
         max={maxYear} 
         marks={marks}
+        sx={{
+          color: 'rgb(102, 128, 11)', // Main color for track and thumb
+          '& .MuiSlider-thumb': {
+            color: 'rgb(102, 128, 11)', // Thumb color
+          },
+          '& .MuiSlider-track': {
+            color: 'rgb(135, 154, 57)', // Track color
+          },
+          '& .MuiSlider-rail': {
+            color: 'grey', // Rail color
+          },
+          '& .MuiSlider-mark': {
+            color: 'orange', // Mark color
+          },
+          '& .MuiSlider-markLabel': {
+            color: 'rgb(16, 15, 15)', // Mark label color
+          },
+          '& .MuiSlider-valueLabel': {
+            backgroundColor: 'rgb(111, 110, 105)', // Value label background color
+            color: 'rgb(255, 252, 240)', // Value label text color
+          },
+        }}
       />
     </Box>
   );
