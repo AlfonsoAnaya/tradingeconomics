@@ -16,7 +16,7 @@ function valuetext(value: number) {
 const minDistance = 10;
 
 function YearsSlider({setYear1, setYear2}: YearsSliderProps) {
-  const [value, setValue] = React.useState<number[]>([2010, 2022]);
+  const [value, setValue] = React.useState<number[]>([1980, 2022]);
 
   useEffect(() => {
     setYear1(value[0].toString());

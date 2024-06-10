@@ -135,7 +135,7 @@ function DataDisplay({ data, indicator, year1, year2, countries }: DataDisplayPr
     if (data === null) return <div><p>No data to show</p></div>
 
     return (
-        <div className="max-w-[900px] w-[95%] pb-14">
+        <div className="max-w-[900px] w-[95%] max-h-[75%] pb-14">
             <canvas ref={chartRef}></canvas>
         </div>
     )

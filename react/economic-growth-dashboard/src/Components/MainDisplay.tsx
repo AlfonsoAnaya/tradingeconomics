@@ -16,8 +16,8 @@ interface DataPoint {
 
 function MainDisplay() {
 
-    const [countries, setCountries] = useState<string[]>(['Mexico']);
-    const [year1, setYear1] = useState<string>('2010');
+    const [countries, setCountries] = useState<string[]>(['Mexico', 'Thailand', 'New Zealand', 'Sweden']);
+    const [year1, setYear1] = useState<string>('1980');
     const [year2, setYear2] = useState<string>('2022');
     const [indicator, setIndicator] = useState<string>('GDP');
     const [searchCounter, setSearchCounter] = useState<number>(0);
@@ -28,13 +28,9 @@ function MainDisplay() {
 
         const api_key = 'ba117b157e82406:5j3x3zor5df6ofd';
         const countriesSearch = countries.join(',');
-        console.log(`https://api.tradingeconomics.com/historical/country/${countriesSearch}/indicator/${indicator}/${year1}-01-01/${year2}-12-31?c=${api_key}`)
         try {
             const response = await axios.get(`https://api.tradingeconomics.com/historical/country/${countriesSearch}/indicator/${indicator}/${year1}-01-01/${year2}-12-31?c=${api_key}`);
-            console.log(response.data)
             setData(response.data)
-            console.log(`state data: ${data}`)
-
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -43,12 +39,6 @@ function MainDisplay() {
     useEffect(() => {
         fetchData();
     }, [countries, year1, year2, indicator]);
-
-    useEffect(() => {
-        if (data) {
-            console.log('State data:', data[0]);
-        }
-    }, [data]);
 
 
     return (

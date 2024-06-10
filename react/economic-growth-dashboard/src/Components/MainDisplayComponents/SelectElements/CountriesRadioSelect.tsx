@@ -10,7 +10,7 @@ interface CountriesRadioSelectProps {
 
 function CountriesRadioSelect({setCountries}: CountriesRadioSelectProps) {
   
-  const [checkedCountries, setCheckedCountries] = useState<string[]>(['Mexico']);
+  const [checkedCountries, setCheckedCountries] = useState<string[]>(['Mexico','Thailand','New Zealand','Sweden']);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = event.target;

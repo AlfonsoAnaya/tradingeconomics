@@ -32,8 +32,8 @@ function SelectForm({
     // }
 
     return (
-        <div className="flex justify-center items-center w-[100%] max-w-[800px] self-center border-[1px] border-dark rounded-xl mt-[20px]">
-            <div className="flex gap-[50px] justify-start items-center">
+        <div className="flex justify-center items-center w-[100%] max-h-[25%] max-w-[800px] self-center border-[1px] border-dark rounded-xl mt-[20px] p-4">
+            <div className="flex flex-col md:flex-row gap-[50px] justify-start items-center">
                 <CountriesRadioSelect
                     setCountries={setCountries}
                 />
