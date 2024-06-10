@@ -5,7 +5,7 @@ import Footer from './Components/Footer';
 
 function App() {
   return (
-    <div className="App flex flex-col justify-between h-[100vh]">
+    <div className="App flex flex-col justify-between h-[100vh] bg-white">
       <Header/>
       <MainDisplay />
       <Footer />

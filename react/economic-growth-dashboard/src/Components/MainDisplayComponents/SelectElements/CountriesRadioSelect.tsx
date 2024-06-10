@@ -28,7 +28,7 @@ function CountriesRadioSelect({setCountries}: CountriesRadioSelectProps) {
   }, [checkedCountries]);
 
   return (
-    <FormGroup>
+    <FormGroup className="[&>*]:h-[30px]">
       <FormControlLabel
         control={<Checkbox name="Mexico" checked={checkedCountries.includes('Mexico')} onChange={handleCheckboxChange} />}
         label="Mexico"
