@@ -20,19 +20,21 @@ function MainDisplay() {
     const [year1, setYear1] = useState<string>('1980');
     const [year2, setYear2] = useState<string>('2022');
     const [indicator, setIndicator] = useState<string>('GDP');
-    const [searchCounter, setSearchCounter] = useState<number>(0);
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState<DataPoint[] | null>(null);
+    const [error, setError] = useState<string | null>(null);
 
     const fetchData = async () => {
-
-        const api_key = 'ba117b157e82406:5j3x3zor5df6ofd';
         const countriesSearch = countries.join(',');
+        setLoading(true);
         try {
-            const response = await axios.get(`https://api.tradingeconomics.com/historical/country/${countriesSearch}/indicator/${indicator}/${year1}-01-01/${year2}-12-31?c=${api_key}`);
-            setData(response.data)
+            const response = await axios.get(`https://api.tradingeconomics.com/historical/country/${countriesSearch}/indicator/${indicator}/${year1}-01-01/${year2}-12-31?c=${process.env.TRADING_ECONOMICS_API_KEY}`);
+            setData(response.data);
         } catch (error) {
+            setError('Error fetching data. Please try again later.');
             console.error('Error fetching data:', error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -53,15 +55,20 @@ function MainDisplay() {
                     setYear1={setYear1}
                     setYear2={setYear2}
                     setSearchIndicator={setIndicator}
-                    setSearchCounter={setSearchCounter}
                 />
-                <DataDisplay
-                    data={data}
-                    indicator={indicator}
-                    year1={year1}
-                    year2={year2}
-                    countries={countries}
-                />
+                {loading ? (
+                    <p>Loading...</p>
+                ) : error ? (
+                    <p>{error}</p>
+                ) : (
+                    <DataDisplay
+                        data={data}
+                        indicator={indicator}
+                        year1={year1}
+                        year2={year2}
+                        countries={countries}
+                    />
+                )}
             </div>
         </div >
 

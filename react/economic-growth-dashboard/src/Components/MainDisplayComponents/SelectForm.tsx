@@ -12,7 +12,6 @@ interface SelectFormProps {
     setYear1: React.Dispatch<React.SetStateAction<string>>;
     setYear2: React.Dispatch<React.SetStateAction<string>>;
     setSearchIndicator: React.Dispatch<React.SetStateAction<string>>;
-    setSearchCounter: React.Dispatch<React.SetStateAction<number>>;
 }
 
 function SelectForm({
@@ -24,7 +23,6 @@ function SelectForm({
     setYear1,
     setYear2,
     setSearchIndicator,
-    // setSearchCounter
 }: SelectFormProps) {
 
     // const handleClick = () => {
