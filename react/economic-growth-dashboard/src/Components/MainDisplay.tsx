@@ -24,11 +24,12 @@ function MainDisplay() {
     const [data, setData] = useState<DataPoint[] | null>(null);
     const [error, setError] = useState<string | null>(null);
 
+
     const fetchData = async () => {
         const countriesSearch = countries.join(',');
         setLoading(true);
         try {
-            const response = await axios.get(`https://api.tradingeconomics.com/historical/country/${countriesSearch}/indicator/${indicator}/${year1}-01-01/${year2}-12-31?c=${process.env.TRADING_ECONOMICS_API_KEY}`);
+            const response = await axios.get(`https://api.tradingeconomics.com/historical/country/${countriesSearch}/indicator/${indicator}/${year1}-01-01/${year2}-12-31?c=${process.env.REACT_APP_API_KEY}`);
             setData(response.data);
         } catch (error) {
             setError('Error fetching data. Please try again later.');
@@ -60,15 +61,15 @@ function MainDisplay() {
                     <p>Loading...</p>
                 ) : error ? (
                     <p>{error}</p>
-                ) : (
-                    <DataDisplay
-                        data={data}
-                        indicator={indicator}
-                        year1={year1}
-                        year2={year2}
-                        countries={countries}
-                    />
-                )}
+                ) : <p>success</p>
+                }
+                <DataDisplay
+                    data={data}
+                    indicator={indicator}
+                    year1={year1}
+                    year2={year2}
+                    countries={countries}
+                />
             </div>
         </div >
 
