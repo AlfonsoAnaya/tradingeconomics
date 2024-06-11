@@ -1,13 +1,8 @@
-import { useState } from "react";
 import CountriesRadioSelect from "./SelectElements/CountriesRadioSelect";
 import YearsSlider from "./SelectElements/YearsSlider";
 import IndicatorsSelect from "./SelectElements/IndicatorsSelect";
 
 interface SelectFormProps {
-    countries: string[]
-    year1: string
-    year2: string
-    indicator: string
     setCountries: React.Dispatch<React.SetStateAction<string[]>>;
     setYear1: React.Dispatch<React.SetStateAction<string>>;
     setYear2: React.Dispatch<React.SetStateAction<string>>;
@@ -15,10 +10,6 @@ interface SelectFormProps {
 }
 
 function SelectForm({
-    countries, 
-    year1,
-    year2,
-    indicator,
     setCountries,
     setYear1,
     setYear2,

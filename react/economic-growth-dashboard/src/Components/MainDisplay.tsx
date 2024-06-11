@@ -48,10 +48,6 @@ function MainDisplay() {
         <div className="w-[100%] bg-white flex justify-center items-center">
             <div className="flex flex-col justify-between items-center w-[90%] gap-8 self-center bg-white text-dark">
                 <SelectForm
-                    countries={countries}
-                    year1={year1}
-                    year2={year2}
-                    indicator={indicator}
                     setCountries={setCountries}
                     setYear1={setYear1}
                     setYear2={setYear2}
@@ -69,10 +65,16 @@ function MainDisplay() {
                     countries={countries}
                 />
                 }
+                <DataDisplay
+                    data={data}
+                    indicator={indicator}
+                    year1={year1}
+                    year2={year2}
+                    countries={countries}
+                />
                 
             </div>
         </div >
-
     )
 }
 

@@ -36,12 +36,6 @@ function DataDisplay({ data, indicator, year1, year2, countries }: DataDisplayPr
     }
     
     const colors = ["rgb(209, 77, 65)", "rgb(208, 162, 21)", "rgb(58, 169, 159)", "rgb(139, 126, 200)"]
-    function getRandomRGBColor() {
-        const r = Math.floor(Math.random() * 256);
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
-        return `rgb(${r}, ${g}, ${b})`;
-    }
 
     const generateDataSets = (countriesArray: string[], dataArray: DataPoint[] | null, colorsArray: string[]) => {
         // Initialize an empty array to hold the datasets
@@ -133,6 +127,7 @@ function DataDisplay({ data, indicator, year1, year2, countries }: DataDisplayPr
         }
     }, [data]);
 
+    
     if (data === null) return <div><p>No data to show</p></div>
 
     return (
