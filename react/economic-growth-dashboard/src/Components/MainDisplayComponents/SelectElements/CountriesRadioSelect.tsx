@@ -28,7 +28,7 @@ function CountriesRadioSelect({setCountries}: CountriesRadioSelectProps) {
   }, [checkedCountries]);
 
   return (
-    <FormGroup className="[&>*]:h-[30px]">
+    <FormGroup className="checkbox-group [&>*]:h-[30px]">
       <FormControlLabel
         control={<Checkbox name="Mexico" checked={checkedCountries.includes('Mexico')} onChange={handleCheckboxChange} sx={{
           color: "rgb(102, 128, 11)", // Unchecked color
@@ -39,6 +39,7 @@ function CountriesRadioSelect({setCountries}: CountriesRadioSelectProps) {
         label="Mexico"
       />
       <FormControlLabel
+      className="md:w-auto w-[45%]"
         control={<Checkbox name="Thailand" checked={checkedCountries.includes('Thailand')} onChange={handleCheckboxChange} sx={{
           color: "rgb(102, 128, 11)", // Unchecked color
           '&.Mui-checked': {
@@ -57,6 +58,7 @@ function CountriesRadioSelect({setCountries}: CountriesRadioSelectProps) {
         label="New Zealand"
       />
       <FormControlLabel
+        className="md:w-auto w-[45%]"
         control={<Checkbox name="Sweden" checked={checkedCountries.includes('Sweden')} onChange={handleCheckboxChange} sx={{
           color: "rgb(102, 128, 11)", // Unchecked color
           '&.Mui-checked': {

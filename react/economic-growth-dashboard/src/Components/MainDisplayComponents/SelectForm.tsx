@@ -25,13 +25,13 @@ function SelectForm({
     setSearchIndicator,
 }: SelectFormProps) {
 
-    // const handleClick = () => {
-    //     setSearchCounter((prev) => prev+1);
-    // }
-
     return (
         <div className="flex justify-center items-center w-[100%] max-h-[25%] max-w-[800px] self-center border-[1px] border-dark rounded-xl mt-[20px] p-4">
-            <div className="flex flex-col md:flex-row gap-[50px] justify-start items-center">
+            <div className=" w-[100%] flex flex-col md:flex-row gap-[30px] justify-between items-center">
+                
+                <IndicatorsSelect
+                    setSearchIndicator={setSearchIndicator}
+                />
                 <CountriesRadioSelect
                     setCountries={setCountries}
                 />
@@ -39,16 +39,8 @@ function SelectForm({
                     setYear1={setYear1}
                     setYear2={setYear2}
                 />
-                <IndicatorsSelect
-                    setSearchIndicator={setSearchIndicator}
-                />
             </div>
-            {/* <button 
-                className="bg-primary px-6 py-2 text-white rounded-lg"
-                onClick={handleClick}
-            >
-                SEARCH
-                </button> */}
+
         </div>
     )
 }

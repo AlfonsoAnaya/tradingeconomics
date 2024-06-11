@@ -11,4 +11,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.checkbox-group {
+  flex-direction: row !important;
+  justify-content: space-between;
+}
 
+@media (min-width: 768px) {
+  .checkbox-group {
+      flex-direction: column !important;
+  }
+}

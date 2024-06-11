@@ -61,15 +61,15 @@ function MainDisplay() {
                     <p>Loading...</p>
                 ) : error ? (
                     <p>{error}</p>
-                ) : <p>success</p>
-                }
-                <DataDisplay
+                ) : <DataDisplay
                     data={data}
                     indicator={indicator}
                     year1={year1}
                     year2={year2}
                     countries={countries}
                 />
+                }
+                
             </div>
         </div >
 
