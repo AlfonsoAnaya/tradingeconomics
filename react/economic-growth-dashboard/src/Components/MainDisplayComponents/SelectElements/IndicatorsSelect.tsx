@@ -20,7 +20,7 @@ function IndicatorsSelect({setSearchIndicator}: IndicatorsSelectProps) {
 
   useEffect(()=> {
     setSearchIndicator(indicator);
-  }, [indicator])
+  }, [indicator, setSearchIndicator])
 
   return (
     <Box sx={{ minWidth: 200 }}>

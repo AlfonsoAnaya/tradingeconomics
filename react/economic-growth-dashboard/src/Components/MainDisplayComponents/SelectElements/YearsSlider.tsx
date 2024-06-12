@@ -21,7 +21,7 @@ function YearsSlider({setYear1, setYear2}: YearsSliderProps) {
   useEffect(() => {
     setYear1(value[0].toString());
     setYear2(value[1].toString());
-  }, [value])
+  }, [])
 
   const minYear = 1960;
   const maxYear = 2022;
@@ -35,6 +35,16 @@ function YearsSlider({setYear1, setYear2}: YearsSliderProps) {
       label: '2022',
     }
   ];
+
+  const handleCommit = (
+    event: Event | React.SyntheticEvent<Element, Event>,
+    newValue: number | number[]
+  ) => {
+    if (Array.isArray(newValue)) {
+      setYear1(newValue[0].toString());
+      setYear2(newValue[1].toString());
+    }
+  };
 
   const handleChange = (
     event: Event,
@@ -67,6 +77,7 @@ function YearsSlider({setYear1, setYear2}: YearsSliderProps) {
         getAriaLabel={() => 'Minimum distance shift'}
         value={value}
         onChange={handleChange}
+        onChangeCommitted={handleCommit}
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
         disableSwap

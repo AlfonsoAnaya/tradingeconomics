@@ -24,8 +24,8 @@ function CountriesRadioSelect({setCountries}: CountriesRadioSelectProps) {
   };
 
   useEffect(() => {
-    setCountries(checkedCountries)
-  }, [checkedCountries]);
+    setCountries(checkedCountries);
+  }, [checkedCountries, setCountries]);
 
   return (
     <FormGroup className="checkbox-group [&>*]:h-[30px]">
